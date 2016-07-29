@@ -10,7 +10,8 @@ difference() {
     circle(d=od);
     circle(d=id);
     for(i = [1 : n]) {
-    rotate([0, 0, 360/n * i]) {
-        translate([bcr, 0, 0]) circle(d=bolt);    } 
+        rotate([0, 0, 360/n * i]) {
+            translate([bcr, 0, 0]) circle(d=bolt);    
+        } 
     };
 };
