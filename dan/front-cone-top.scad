@@ -1,10 +1,13 @@
+material_thickness = 4.4;
+
 angle = 10;
 height = 260;
 width = 40;
 upper = 1;
-tooth_depth = 5;
+tooth_depth = material_thickness;
 tooth_count = 2;
 tooth_width = 70;
+
 
 // w=depth of teeth
 module teeth(n, d, w) {
@@ -21,8 +24,8 @@ module trap(w, h, a) {
 }
 
 difference() {
-	translate([-width/2, 0]) trap(width, height, angle);
-}
+union() {
+translate([-width/2, 0]) trap(width, height, angle);
 
 // right
 //rotate(-angle) 
@@ -43,6 +46,12 @@ translate([0, tooth_width])
 }
 
 // top
-translate([40, height]) rotate(90) {
-	//teeth(2, tooth_depth);
+translate([-width+20, 0.001]) 
+rotate(-90) 
+{
+	teeth(2, tooth_depth, 10);
+}
+
+}
+translate([-width*10/2, height]) square([width*10, height]);
 }
