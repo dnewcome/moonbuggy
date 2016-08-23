@@ -40,7 +40,7 @@ rotate(-angle)
 }
 
 // top
-translate([-width+20, 0]) 
+translate([-width+20, 0.001]) 
 rotate(-90) 
 {
 	teeth(2, tooth_depth, 10);
